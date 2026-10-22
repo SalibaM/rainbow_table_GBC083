@@ -5,7 +5,7 @@ baseadas no Diceware (duas palavras da lista do Reinhold). A função de reduç�
 usa uma cor por coluna, para reduzir a repetição entre as cadeias. Trabalho da
 disciplina de Segurança da Informação (GBC083), Professor Ivan Sendin.
 
-## Como funciona, em uma linha
+## Como funciona
 
 Cada cadeia alterna hash (SHA-256 com o prefixo `GBC083`) e redução, e a tabela
 guarda apenas o começo e o fim de cada cadeia. Na busca, refazemos o caminho da
