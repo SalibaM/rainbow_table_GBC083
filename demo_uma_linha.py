@@ -1,4 +1,4 @@
-"""Demonstracao didatica: constroi UMA cadeia e imprime cada passo (senha -> hash -> senha -> hash -> ...), para ver a mecanica funcionando."""
+"""Demonstracao didatica: constroi UMA cadeia e imprime cada passo"""
 
 import os
 import sys

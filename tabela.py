@@ -21,7 +21,7 @@ def construir_tabela(altura, largura, palavras, semente=0, _hash=meu_hash, _redu
 
 
 def quebrar(h_alvo, tabela, largura, palavras, _hash=meu_hash, _reduzir=reduzir):
-    """Tenta quebrar o hash h_alvo usando a tabela inteira."""
+    """Tenta quebrar o hash h_alvo usando a tabela inteira. Devolve a senha"""
     for k in range(largura - 1, -1, -1):
         senha = _reduzir(h_alvo, k, palavras)          # seria P_{k+1}
         for coluna in range(k + 1, largura):

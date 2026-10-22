@@ -57,7 +57,7 @@ def descrever_hardware():
 
 
 def reduzir_uma_cor(h, coluna, palavras):
-    """Reducao de COR UNICA: ignora a coluna -> todas as colunas usam a MESMA funcao (equivale a sempre coluna 0)."""
+    """Reducao de COR UNICA: ignora a coluna -> todas as colunas usam a MESMA"""
     return reduzir(h, 0, palavras)
 
 
@@ -79,7 +79,7 @@ class Perfil:
 
 
 def contar_operacoes_quebra(h_alvo, tabela, largura, palavras, _reduzir=reduzir):
-    """Quebra contando operacoes."""
+    """Quebra contando operacoes. Devolve (resultado, n_hashes, n_reducoes)."""
     perfil = Perfil(reduzir_base=_reduzir)
     resultado = quebrar(h_alvo, tabela, largura, palavras,
                         _hash=perfil.hash, _reduzir=perfil.reduzir)
@@ -87,7 +87,7 @@ def contar_operacoes_quebra(h_alvo, tabela, largura, palavras, _reduzir=reduzir)
 
 
 def cronometrar_quebra(h_alvo, tabela, largura, palavras):
-    """Quebra medindo o tempo (perf_counter), com as funcoes padrao (sem overhead de contagem)."""
+    """Quebra medindo o tempo (perf_counter), com as funcoes padrao (sem"""
     inicio = time.perf_counter()
     resultado = quebrar(h_alvo, tabela, largura, palavras)
     return resultado, time.perf_counter() - inicio
@@ -98,7 +98,7 @@ def cronometrar_quebra(h_alvo, tabela, largura, palavras):
 def medir_configuracao(altura, largura, palavras, semente=0,
                        n_amostra=200, semente_amostra=12345,
                        _reduzir=reduzir, rotulo="rainbow"):
-    """Constroi UMA tabela (altura x largura) e devolve um dict com as metricas:"""
+    """Constroi UMA tabela (altura x largura) e devolve um dict com as metricas"""
     N = len(palavras) ** 2
 
     # --- construcao (cronometrada) ---
@@ -158,7 +158,7 @@ def medir_configuracao(altura, largura, palavras, semente=0,
 
 
 def varrer(palavras, produto, larguras, semente=0, n_amostra=200):
-    """Para cada largura em 'larguras', usa altura = produto // largura (mantendo altura x largura ~constante -> mesma cota teorica) e mede a configuracao."""
+    """Para cada largura em 'larguras', usa altura = produto // largura (mantendo"""
     linhas = []
     for largura in larguras:
         altura = produto // largura
@@ -173,7 +173,7 @@ def varrer(palavras, produto, larguras, semente=0, n_amostra=200):
 
 
 def cobertura_distinta(altura, largura, palavras, semente=0, _reduzir=reduzir):
-    """Constroi as cadeias (mesma semente) e conta quantas senhas DISTINTAS a tabela realmente cobre (um set com todos os elos visitados)."""
+    """Constroi as cadeias (mesma semente) e conta quantas senhas DISTINTAS"""
     sorteador = random.Random(semente)
     N = len(palavras) ** 2
     cobertos = set()
@@ -187,7 +187,7 @@ def cobertura_distinta(altura, largura, palavras, semente=0, _reduzir=reduzir):
 
 
 def comparar_cores(altura, largura, palavras, semente=0):
-    """Compara rainbow vs 1 cor pela COBERTURA DISTINTA (so construcao, sem quebra -- barato)."""
+    """Compara rainbow vs 1 cor pela COBERTURA DISTINTA (so construcao, sem"""
     linhas = []
     for rotulo, reducao in (("rainbow", reduzir), ("1cor", reduzir_uma_cor)):
         distintas, total = cobertura_distinta(altura, largura, palavras,
@@ -205,7 +205,7 @@ def comparar_cores(altura, largura, palavras, semente=0):
 
 
 def curva_eficacia(palavras, alturas, largura=100, semente=0, n_amostra=500):
-    """Constroi tabelas de cobertura CRESCENTE (largura fixa, altura aumentando) e mede a eficacia real de cada uma."""
+    """Constroi tabelas de cobertura CRESCENTE (largura fixa, altura aumentando)"""
     linhas = []
     for altura in alturas:
         produto = altura * largura

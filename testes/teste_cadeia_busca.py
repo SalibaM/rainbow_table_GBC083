@@ -24,7 +24,7 @@ LARGURA = 6
 
 
 def _senhas_da_cadeia(indice_inicio, largura):
-    """Refaz a cadeia e devolve [P0, P1, ..., P_W]."""
+    """Refaz a cadeia e devolve [P0, P1, ..., P_W]. P_k tem hash meu_hash(P_k)"""
     senha = indice_para_senha(indice_inicio, PALAVRAS)
     senhas = [senha]
     for coluna in range(largura):

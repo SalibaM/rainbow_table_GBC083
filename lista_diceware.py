@@ -1,4 +1,4 @@
-"""Carrega a lista Diceware (Reinhold) e faz a ponte entre:"""
+"""Carrega a lista Diceware (Reinhold) e faz a ponte entre"""
 
 import re
 
@@ -12,7 +12,7 @@ _LINHA_PALAVRA = re.compile(r"^\d{5}\s+(\S+)\s*$")
 
 
 def carregar_palavras(caminho):
-    """Le o arquivo .asc do Diceware e devolve a lista das 7776 palavras, na ordem do arquivo (indice 11111 -> posicao 0, ..."""
+    """Le o arquivo .asc do Diceware e devolve a lista das 7776 palavras"""
     palavras = []
     with open(caminho, encoding="utf-8") as arquivo:
         for linha in arquivo:
@@ -39,7 +39,7 @@ def indice_para_senha(n, palavras):
 
 
 def senha_para_indice(senha, palavras):
-    """Operacao inversa de indice_para_senha: dada a senha "p1 p2", devolve o indice numerico n daquele par dentro do espaco de 60.466.176 senhas."""
+    """Operacao inversa de indice_para_senha: dada a senha "p1 p2", devolve"""
     partes = senha.split(SEPARADOR)
     if len(partes) != PALAVRAS_POR_SENHA:
         raise ValueError(f"senha nao tem {PALAVRAS_POR_SENHA} palavras: {senha!r}")

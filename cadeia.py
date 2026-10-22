@@ -6,7 +6,7 @@ from reducao import reduzir
 
 
 def construir_cadeia(indice_inicio, largura, palavras, _hash=meu_hash, _reduzir=reduzir):
-    """Constroi a cadeia que comeca no indice 'indice_inicio' e aplica 'largura' reducoes."""
+    """Constroi a cadeia que comeca no indice 'indice_inicio' e aplica 'largura'"""
     inicio = indice_para_senha(indice_inicio, palavras)
     senha = inicio
     for coluna in range(largura):          # coluna 0, 1, ..., largura-1
