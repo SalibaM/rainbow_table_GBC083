@@ -1,0 +1,5 @@
+rotulo,altura,largura,produto,pares_guardados,taxa_sobrevivencia,cota_teorica,tempo_construcao_s,disco_bytes,n_amostra,acertos,taxa_acerto,tempo_medio_quebra_us,ops_media_hit,ops_media_miss
+rainbow,40000,25,1000000,39649,0.9912,0.0165,1.247,870787,200,3,0.015,380.9,280.7,628.7
+rainbow,20000,50,1000000,19831,0.9916,0.0165,1.227,435589,200,0,0.0,1551.3,,2515.0
+rainbow,10000,100,1000000,9907,0.9907,0.0165,1.308,217447,200,2,0.01,6379.0,250.0,10054.9
+rainbow,5000,200,1000000,4953,0.9906,0.0165,1.306,108775,200,3,0.015,25140.4,10718.0,40217.5

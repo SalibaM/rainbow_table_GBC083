@@ -1,4 +1,6 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-resultados/
+# versiona so os CSVs de resultados/ (figuras ficam de fora, sao regeneraveis)
+resultados/*
+!resultados/*.csv
